@@ -1,0 +1,15 @@
+.title-section__button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.title-section__button {
+  background: 0;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  font-family: inherit;
+  padding: 0.7% 0;
+  text-transform: uppercase;
+  width: 17%;
+}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Signika:400,700');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,6 +18,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	font-family: 'Signika', sans-serif;
 	vertical-align: baseline;
 }
 
@@ -24,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	color: #fff;
 	line-height: 1;
 }
 ol, ul {
@@ -43,6 +47,7 @@ table {
 }
 
 * {
+	color: #fff;
 	font-family: sans-serif;
 	box-sizing: border-box;
 }
@@ -81,4 +86,13 @@ h5 {
 
 h6 {
 	font-size: 16px;
+}
+
+.container {
+	background-image: url('../images/background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	margin: 0 auto;
+	max-width: $max-width;
 }

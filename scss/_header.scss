@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+}
+
+.navigation {
+  background-image: linear-gradient(rgba(33, 33, 33, 0.5), rgba(33, 33, 33, 0.01));
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navigation-list {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 2% 0 10% 0;
+  width: 50%;
+}
+
+.navigation-list__element {
+  margin: 0 5%;
+  text-transform: uppercase;
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+}
