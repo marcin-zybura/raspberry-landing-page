@@ -1,0 +1,25 @@
+.footer {
+  background-color: rgba(33, 33, 33, 0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5% 5%;
+  width: 100%;
+}
+
+.footer__cookies-text {
+  margin-right: 5px;
+}
+
+.footer__privacy-text {
+  margin-left: 5px;
+}
+
+.footer__copyright-text,
+.footer__cookies-text,
+.footer__privacy-text {
+  text-transform: uppercase;
+}
+
+.footer__designby-text--author {
+  font-weight: 700;
+}

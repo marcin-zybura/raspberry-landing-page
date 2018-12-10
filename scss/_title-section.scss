@@ -1,3 +1,9 @@
+.title-section {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .title-section__button-container {
   display: flex;
   justify-content: center;
@@ -6,8 +12,9 @@
 
 .title-section__button {
   background: 0;
-  border-radius: 20px;
+  border-radius: 25px;
   border: 2px solid #fff;
+  cursor: pointer;
   font-family: inherit;
   padding: 0.7% 0;
   text-transform: uppercase;
