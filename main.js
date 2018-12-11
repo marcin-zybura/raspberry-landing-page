@@ -45,16 +45,16 @@ $(".popup-form").on("submit", (e) => {
     mode: "no-cors"
   }
 
-  fetch(apiUrl, otherParam)
-  .then(data => {
-    return data.json();
-  })
-  .then(res => {
-    console.log(res);
-  })
-  .catch(error => {
-    console.log(error);
-  })
+  // fetch(apiUrl, otherParam)
+  // .then(data => {
+  //   return data.json();
+  // })
+  // .then(res => {
+  //   console.log(res);
+  // })
+  // .catch(error => {
+  //   console.log(error);
+  // })
 
   // let xhttp = new XMLHttpRequest();
   // xhttp.open("POST", "https://recruitment-api.pyt1.stg.jmr.pl/login", true);
@@ -86,19 +86,19 @@ $(".popup-form").on("submit", (e) => {
 //     "password": password
 //   }
 
-//   function UserAction() {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function() {
-//          if (this.readyState == 4 && this.status == 200) {
-//              alert(this.responseText);
-//          }
-//     };
-//     xhttp.open("POST", apiUrl, true);
-//     xhttp.setRequestHeader("Content-type", "application/json");
-//     xhttp.send(body);
-// }
+  function UserAction() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+             alert(this.responseText);
+         }
+    };
+    xhttp.open("POST", apiUrl, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(body);
+}
 
-//   UserAction();
+  UserAction();
 
 
 
