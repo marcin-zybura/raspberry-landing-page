@@ -39,8 +39,8 @@ $(".popup-form").on("submit", (e) => {
   // );
 
   const body = {
-    "login": `${email}`,
-    "password": `${password}`
+    "login": "correct_login@example.com",
+    "password": "C0rr3Ct_P@55w0rd"
   }
 
   const otherParam = {
@@ -96,7 +96,7 @@ $(".popup-form").on("submit", (e) => {
   function UserAction() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
+         if (this.status == 200) {
              alert(this.responseText);
          }
     };
