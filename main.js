@@ -17,12 +17,10 @@ $("#title-section__button").on("click", () => {
 $(document).mouseup(function(e) 
 {
     let container = $(".popup");
-    // console.log(e.target);
     if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
         container.fadeOut();
         $(".shadow").hide();
-        // console.log(e.target);
     }
 });
 
@@ -68,12 +66,6 @@ $(".popup-form").on("submit", (e) => {
   //   console.log(error);
   // })
 
-  // let xhttp = new XMLHttpRequest();
-  // xhttp.open("POST", "https://recruitment-api.pyt1.stg.jmr.pl/login", true);
-  // xhttp.setRequestHeader("Content-type", "application/json");
-  // // xhttp.send("fname=Henry&lname=Ford");
-  // xhttp.send(`login=${email}&password=${password}`);
-
   // fetch(apiUrl, {
   //   method: "POST",
   //   headers: {
@@ -93,38 +85,39 @@ $(".popup-form").on("submit", (e) => {
   //     alert("sorry, there are no results for your search");
   // });
 
-//   let body = {
-//     "login": email,
-//     "password": password
-//   }
+  let body = {
+    "login": email,
+    "password": password
+  }
 
-//   function UserAction() {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function() {
-//          if (this.status == 200) {
-//              alert(this.responseText);
-//          }
-//     };
-//     xhttp.open("POST", apiUrl, true);
-//     xhttp.setRequestHeader("Content-type", "application/json");
-//     xhttp.send(body);
-// }
-//   UserAction();
+  function UserAction() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+         if (this.status == 200) {
+             alert(this.responseText);
+         }
+    };
+    xhttp.open("POST", apiUrl, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send(data);
+}
+  UserAction();
 
 
-  $.ajax({
-    url: apiUrl,
-    type: 'POST',
-    dataType: 'json',
-    data: data,
+  // $.ajax({
+  //   url: apiUrl,
+  //   type: 'POST',
+  //   dataType: 'json',
+  //   data: data,
+  //   contentType: 'application/json',
 
-    success: function (data, textStatus, xhr) {  
-        console.log(data);  
-    },  
-    error: function (xhr, textStatus, errorThrown) {  
-        console.log('Error in Operation');  
-    }
-  });
+  //   success: function (data, textStatus, xhr) {  
+  //       console.log(data);  
+  //   },  
+  //   error: function (xhr, textStatus, errorThrown) {  
+  //       console.log('Error in Operation');  
+  //   }
+  // });
 
 
   e.preventDefault();
