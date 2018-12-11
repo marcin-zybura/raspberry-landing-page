@@ -17,11 +17,89 @@ $("#title-section__button").on("click", () => {
 $(document).mouseup(function(e) 
 {
     let container = $(".popup");
-    console.log(e.target);
+    // console.log(e.target);
     if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
         container.fadeOut();
         $(".shadow").hide();
-        console.log(e.target);
+        // console.log(e.target);
     }
+});
+
+$(".popup-form").on("submit", (e) => {
+  const apiUrl = "https://recruitment-api.pyt1.stg.jmr.pl/login";
+  const email = $("#popup-email").val();
+  const password = $("#popup-password").val();
+
+  const body = {
+    login: email,
+    password: password
+  }
+
+  const otherParam = {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: body,
+    method: "POST"
+  }
+
+  fetch(apiUrl, otherParam)
+  .then(data => {
+    return data.json();
+  })
+  .then(res => {
+    console.log(res);
+  })
+  .catch(error => {
+    console.log(error);
+  })
+
+  // let xhttp = new XMLHttpRequest();
+  // xhttp.open("POST", "https://recruitment-api.pyt1.stg.jmr.pl/login", true);
+  // xhttp.setRequestHeader("Content-type", "application/json");
+  // // xhttp.send("fname=Henry&lname=Ford");
+  // xhttp.send(`login=${email}&password=${password}`);
+
+  // fetch(apiUrl, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json"
+  //   },
+  //   body: {
+  //     "login": email,
+  //     "password": password
+  //   }
+  // })
+  // .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
+  // .then(response => {
+  //     console.log(response);
+  // })
+  // .catch(err => {
+  //     console.log("u");
+  //     alert("sorry, there are no results for your search");
+  // });
+
+//   let body = {
+//     "login": email,
+//     "password": password
+//   }
+
+//   function UserAction() {
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function() {
+//          if (this.readyState == 4 && this.status == 200) {
+//              alert(this.responseText);
+//          }
+//     };
+//     xhttp.open("POST", apiUrl, true);
+//     xhttp.setRequestHeader("Content-type", "application/json");
+//     xhttp.send(body);
+// }
+
+//   UserAction();
+
+
+
+  e.preventDefault();
 });
