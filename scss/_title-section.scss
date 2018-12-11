@@ -65,3 +65,10 @@
     width: 85%;
   }
 }
+
+@media (max-width: 400px) {
+  .title-section__button {
+    padding: 10px 0;
+    width: 200px;
+  }
+}
