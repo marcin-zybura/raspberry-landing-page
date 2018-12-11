@@ -32,8 +32,8 @@ $(".popup-form").on("submit", (e) => {
   const password = $("#popup-password").val();
 
   const body = {
-    login: email,
-    password: password
+    "login": email,
+    "password": password
   }
 
   const otherParam = {
