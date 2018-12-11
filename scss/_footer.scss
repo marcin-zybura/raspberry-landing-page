@@ -14,10 +14,13 @@
   margin-left: 5px;
 }
 
-.footer__copyright-text,
+.footer__copyright-text {
+  text-transform: uppercase;
+}
+
 .footer__cookies-text,
 .footer__privacy-text {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .footer__designby-text--author {

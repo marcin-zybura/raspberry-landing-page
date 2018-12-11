@@ -1,4 +1,4 @@
-// Handle hamburger menu
+// Handle hamburger menu and mobile menu
 function changeHamburger(x) {
   x.classList.toggle("change");
   $(".navigation-mobile").slideToggle();
@@ -49,13 +49,13 @@ $(".popup-form").on("submit", (e) => {
       .then(response => response.json());
   }
 
-  function clearLoginMessage(msg) {
+  const clearLoginMessage = (msg) => {
     setTimeout(() => {
       $(`.${msg}`).text("");
     }, 2000);
   }
 
-  function clearEmailMessage(msg) {
+  const clearEmailMessage = (msg) => {
     setTimeout(() => {
       $(`.${msg}`).fadeOut();
     }, 2000);
@@ -83,7 +83,6 @@ $(".popup-form").on("submit", (e) => {
   else {
     $(".email-error").fadeIn();
     clearEmailMessage("email-error");
-    
   }
 
   postData(apiUrl, data)
