@@ -27,7 +27,7 @@ $(document).mouseup(function(e)
 });
 
 $(".popup-form").on("submit", (e) => {
-  const apiUrl = "https://recruitment-api.pyt1.stg.jmr.pl/login";
+  const apiUrl = "https://cors.io/?https://recruitment-api.pyt1.stg.jmr.pl/login";
   const email = $("#popup-email").val();
   const password = $("#popup-password").val();
 
