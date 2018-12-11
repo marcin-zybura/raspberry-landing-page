@@ -1,3 +1,4 @@
+// Handle hamburger menu
 function changeHamburger(x) {
   x.classList.toggle("change");
   $(".navigation-mobile").slideToggle();
@@ -9,13 +10,14 @@ function changeHamburger(x) {
   }
 }
 
+// Show popup
 $("#title-section__button").on("click", () => {
   $(".shadow").toggle();
   $(".popup").fadeIn();
 });
 
-$(document).mouseup(function(e) 
-{
+// Close popup on click outside
+$(document).mouseup(function(e) {
     let container = $(".popup");
     if (!container.is(e.target) && container.has(e.target).length === 0) 
     {
@@ -24,101 +26,77 @@ $(document).mouseup(function(e)
     }
 });
 
+// Handle popup form submit
 $(".popup-form").on("submit", (e) => {
   const apiUrl = "https://recruitment-api.pyt1.stg.jmr.pl/login";
   const email = $("#popup-email").val();
   const password = $("#popup-password").val();
-
-  // const body = JSON.stringify(
-  //   {
-  //     "login": email,
-  //     "password": password
-  //   }
-  // );
-
-  // const body = {
-  //   "login": "correct_login@example.com",
-  //   "password": "C0rr3Ct_P@55w0rd"
-  // }
-
+  const correctEmail = "correct_login@example.com";
+  const correctPassword = "C0rr3Ct_P@55w0rd";
   const data = {
-    "login": "correct_login@example.com",
-    "password": "C0rr3Ct_P@55w0rd"
-  }
-
-  // const otherParam = {
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   },
-  //   body: body,
-  //   method: "POST",
-  //   mode: "no-cors"
-  // }
-
-  // fetch(apiUrl, otherParam)
-  // .then(data => {
-  //   return data.json();
-  // })
-  // .then(res => {
-  //   console.log(res);
-  // })
-  // .catch(error => {
-  //   console.log(error);
-  // })
-
-  // fetch(apiUrl, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   },
-  //   body: {
-  //     "login": email,
-  //     "password": password
-  //   }
-  // })
-  // .then(res => res.json()) // parse response as JSON (can be res.text() for plain response)
-  // .then(response => {
-  //     console.log(response);
-  // })
-  // .catch(err => {
-  //     console.log("u");
-  //     alert("sorry, there are no results for your search");
-  // });
-
-  let body = {
     "login": email,
     "password": password
+  };
+
+  function postData(apiUrl, data) {
+      return fetch(apiUrl, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+      })
+      .then(response => response.json());
   }
 
-  function UserAction() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-         if (this.status == 200) {
-             alert(this.responseText);
-         }
-    };
-    xhttp.open("POST", apiUrl, true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(data);
-}
-  UserAction();
+  function clearLoginMessage(msg) {
+    setTimeout(() => {
+      $(`.${msg}`).text("");
+    }, 2000);
+  }
 
+  function clearEmailMessage(msg) {
+    setTimeout(() => {
+      $(`.${msg}`).fadeOut();
+    }, 2000);
+  }
 
-  // $.ajax({
-  //   url: apiUrl,
-  //   type: 'POST',
-  //   dataType: 'json',
-  //   data: data,
-  //   contentType: 'application/json',
+  if (validateEmail(email)) {
+    postData(apiUrl, data)
+    .then(
+      (data) => {
+        console.log(JSON.stringify(data));
+        if (email === correctEmail && password === correctPassword) {
+          $(".login-success").text(data.message);
+          clearLoginMessage("login-success");
+        }
+        else {
+          $(".login-failure").text(data.message);
+          clearLoginMessage("login-failure");
+        }
+      }
+    )
+    .catch((error) => {
+      console.error(error);
+    });
+  }
+  else {
+    $(".email-error").fadeIn();
+    clearEmailMessage("email-error");
+    
+  }
 
-  //   success: function (data, textStatus, xhr) {  
-  //       console.log(data);  
-  //   },  
-  //   error: function (xhr, textStatus, errorThrown) {  
-  //       console.log('Error in Operation');  
-  //   }
-  // });
-
+  postData(apiUrl, data)
+  .then(
+    data => console.log(JSON.stringify(data))
+  )
+  .catch(error => console.error(error));
 
   e.preventDefault();
 });
+
+// Regex email format validation
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}

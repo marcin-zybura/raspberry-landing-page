@@ -23,7 +23,7 @@
 }
 
 .popup__button {
-  background-color: #8D505C;
+  background-color: #a83a5d;
   border: 0;
   border-radius: 25px;
   cursor: pointer;
@@ -31,6 +31,26 @@
   font-weight: bold;
   padding: 18px 0;
   text-transform: uppercase;
+}
+
+.email-error {
+  color: red;
+  display: none;
+  font-size: 12px;
+}
+
+.login-success {
+  color: green;
+  margin: 5px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.login-failure {
+  color: red;
+  margin: 5px 0;
+  text-align: center;
+  width: 100%;
 }
 
 // Following styles from https://codepen.io/sevilayha/pen/IdGKH
@@ -84,7 +104,7 @@ input:valid ~ label {
 .bar:before,
 .bar:after {
   content:'';
-  background: #8D505C;
+  background: #a83a5d;
   bottom: 1px;
   height: 2px;
   position: absolute;
@@ -125,7 +145,7 @@ input:focus ~ .highlight {
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
 	from {
-    background: #8D505C;
+    background: #a83a5d;
   }
   to {
     background: transparent;
@@ -135,7 +155,7 @@ input:focus ~ .highlight {
 
 @-moz-keyframes inputHighlighter {
 	from {
-    background: #8D505C;
+    background: #a83a5d;
   }
   to {
     background:transparent;
@@ -145,7 +165,7 @@ input:focus ~ .highlight {
 
 @keyframes inputHighlighter {
 	from {
-    background: #8D505C;
+    background: #a83a5d;
   }
   to {
     background: transparent;

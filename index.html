@@ -85,12 +85,13 @@
 
   <section class="popup">
     <h3 class="popup-header">Are you a Raspbery Knight?</h3>
-    <form class="popup-form" action="">
+    <form class="popup-form" action="" novalidate>
       <div class="group">
         <input id="popup-email" type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Email</label>
+        <span class="email-error">Invalid email format!</span>
       </div>
           
         <div class="group">
@@ -101,6 +102,8 @@
         </div>
 
       <button class="popup__button" type="submit">log in</button>
+      <span class="login-success"></span>
+      <span class="login-failure"></span>
     </form>
   </section>
 
