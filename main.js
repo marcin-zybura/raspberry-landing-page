@@ -48,14 +48,14 @@ $(".popup-form").on("submit", (e) => {
     "password": "C0rr3Ct_P@55w0rd"
   }
 
-  const otherParam = {
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: body,
-    method: "POST",
-    mode: "no-cors"
-  }
+  // const otherParam = {
+  //   headers: {
+  //     "Content-Type": "application/json"
+  //   },
+  //   body: body,
+  //   method: "POST",
+  //   mode: "no-cors"
+  // }
 
   // fetch(apiUrl, otherParam)
   // .then(data => {
