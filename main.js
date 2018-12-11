@@ -41,7 +41,8 @@ $(".popup-form").on("submit", (e) => {
       "Content-Type": "application/json"
     },
     body: body,
-    method: "POST"
+    method: "POST",
+    mode: "no-cors"
   }
 
   fetch(apiUrl, otherParam)
