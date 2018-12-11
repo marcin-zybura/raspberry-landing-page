@@ -15,7 +15,7 @@
       <img class="title-section__image" src="images/title.png" alt="title">
     </h1>
     <div class="title-section__button-container">
-      <button class="title-section__button">enter the gates</button>
+      <button id="title-section__button" class="title-section__button">enter the gates</button>
     </div>
 
     <header class="header">
@@ -79,7 +79,39 @@
           <span class="footer__designby-text">Design by <span class="footer__designby-text--author">Wizard of Oz</span></span>
         </div>
       </footer>
-  </section>  
+  </section>
+
+  <section class="shadow"></section>
+
+  <section class="popup">
+    <h3 class="popup-header">Are you a Raspbery Knight?</h3>
+    <form class="popup-form" action="">
+      <!-- <input class="popup__input-email" type="email" placeholder="Email">
+      <input class="popup__input-password" type="password" placeholder="Password"> -->
+
+
+
+      
+      <div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Email</label>
+      </div>
+          
+        <div class="group">
+          <input type="password" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Password</label>
+        </div>
+
+
+
+
+      <button class="popup__button" type="submit">log in</button>
+    </form>
+  </section>
 
   <script src="main.js"></script>
 </body>

@@ -99,3 +99,13 @@ h6 {
 	max-width: $max-width;
 	position: relative;
 }
+
+.shadow {
+	background-color: rgba(33, 33, 33, 0.7);
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
