@@ -38,7 +38,12 @@ $(".popup-form").on("submit", (e) => {
   //   }
   // );
 
-  const body = {
+  // const body = {
+  //   "login": "correct_login@example.com",
+  //   "password": "C0rr3Ct_P@55w0rd"
+  // }
+
+  const data = {
     "login": "correct_login@example.com",
     "password": "C0rr3Ct_P@55w0rd"
   }
@@ -93,20 +98,33 @@ $(".popup-form").on("submit", (e) => {
 //     "password": password
 //   }
 
-  function UserAction() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-         if (this.status == 200) {
-             alert(this.responseText);
-         }
-    };
-    xhttp.open("POST", apiUrl, true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(body);
-}
+//   function UserAction() {
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function() {
+//          if (this.status == 200) {
+//              alert(this.responseText);
+//          }
+//     };
+//     xhttp.open("POST", apiUrl, true);
+//     xhttp.setRequestHeader("Content-type", "application/json");
+//     xhttp.send(body);
+// }
+//   UserAction();
 
-  UserAction();
 
+  $.ajax({
+    url: apiUrl,
+    type: 'POST',
+    dataType: 'json',
+    data: data,
+
+    success: function (data, textStatus, xhr) {  
+        console.log(data);  
+    },  
+    error: function (xhr, textStatus, errorThrown) {  
+        console.log('Error in Operation');  
+    }
+  });
 
 
   e.preventDefault();
