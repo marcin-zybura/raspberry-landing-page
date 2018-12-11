@@ -16,27 +16,50 @@
     <div class="title-section__button-container">
       <button class="title-section__button">enter the gates</button>
     </div>
-    
+
     <header class="header">
         <nav class="navigation">
           <ul class="navigation-list">
             <li class="navigation-list__element">
-              <a href="">about</a>
+              <a class="navigation-list__element-link" href="">about</a>
             </li>
             <li class="navigation-list__element">
-              <a href="">offer</a>
+              <a class="navigation-list__element-link" href="">offer</a>
+            </li>
+            <li class="navigation-list__element navigation-list__element-logo">
+              <a class="navigation-list__element-link" href=""><img class="navigation-list__element-image" src="images/logo.png" alt="logo"></a>
             </li>
             <li class="navigation-list__element">
-              <a href=""><img class="navigation-list__element--logo" src="images/logo.png" alt="logo"></a>
+              <a class="navigation-list__element-link" href="">gallery</a>
             </li>
             <li class="navigation-list__element">
-              <a href="">gallery</a>
+              <a class="navigation-list__element-link" href="">contact</a>
             </li>
-            <li class="navigation-list__element">
-              <a href="">contact</a>
-            </li>
+
+            <div class="hamburger-container" onclick="changeHamburger(this)">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
           </ul>
         </nav>
+
+        <nav class="navigation-mobile">
+            <ul class="navigation-mobile-list">
+              <li class="navigation-mobile-list__element">
+                <a class="navigation-mobile-list__element-link" href="">about</a>
+              </li>
+              <li class="navigation-mobile-list__element">
+                <a class="navigation-mobile-list__element-link" href="">offer</a>
+              </li>
+              <li class="navigation-mobile-list__element">
+                <a class="navigation-mobile-list__element-link" href="">gallery</a>
+              </li>
+              <li class="navigation-mobile-list__element">
+                <a class="navigation-mobile-list__element-link" href="">contact</a>
+              </li>
+            </ul>
+          </nav>
       </header>
     
       <section class="title-section">

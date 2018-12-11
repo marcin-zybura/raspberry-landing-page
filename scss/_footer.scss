@@ -23,3 +23,27 @@
 .footer__designby-text--author {
   font-weight: 700;
 }
+
+.footer__cookies-text,
+.footer__privacy-text {
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #C84D7E;
+  }
+}
+
+@media (max-width: 850px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer__copyright,
+  .footer__cookies,
+  .footer__designby {
+    margin: 2px 0;
+    text-align: center;
+  }
+}
