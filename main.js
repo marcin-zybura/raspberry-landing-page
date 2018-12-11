@@ -3,6 +3,10 @@ function changeHamburger(x) {
   $(".navigation-mobile").slideToggle();
   $(".navigation").toggleClass("navigation--no-background");
   $(".header").toggleClass("navigation--background-shadow");
+
+  if ($(window).height() <= 620) {
+    $(".header-title").toggle();
+  }
 }
 
 $("#title-section__button").on("click", () => {
