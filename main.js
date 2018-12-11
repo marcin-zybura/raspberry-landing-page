@@ -31,12 +31,17 @@ $(".popup-form").on("submit", (e) => {
   const email = $("#popup-email").val();
   const password = $("#popup-password").val();
 
-  const body = JSON.stringify(
-    {
-      "login": email,
-      "password": password
-    }
-  );
+  // const body = JSON.stringify(
+  //   {
+  //     "login": email,
+  //     "password": password
+  //   }
+  // );
+
+  const body = {
+    "login": "correct_login@example.com",
+    "password": "C0rr3Ct_P@55w0rd"
+  }
 
   const otherParam = {
     headers: {
