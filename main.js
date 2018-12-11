@@ -39,8 +39,8 @@ $(".popup-form").on("submit", (e) => {
   // );
 
   const body = {
-    "login": "correct_login@example.com",
-    "password": "C0rr3Ct_P@55w0rd"
+    "login": `${email}`,
+    "password": `${password}`
   }
 
   const otherParam = {
